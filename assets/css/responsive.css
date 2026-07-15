@@ -15,6 +15,40 @@
       padding-right: 1rem;
   }
 
+  /* .hero__overlay is a flex row (for desktop's side-padded
+     layout); on mobile that's not needed and the single child
+     can just behave as a normal block, which sidesteps any
+     flex sizing edge-cases for the text column below. */
+  .hero__overlay {
+    display: block;
+  }
+
+  .hero__text,
+  .hero__eyebrow,
+  .hero__title,
+  .hero__description,
+  .hero__actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* The nav bar container previously only had left padding,
+     so the hamburger button sat flush against the right edge
+     of the screen. */
+  .site-header .container {
+    padding-right: 1rem;
+  }
+
+  /* "How Can We Support You Today?" was forced onto a single
+     line (white-space: nowrap) sized for desktop, so on a
+     narrow screen it overflowed off the right edge instead of
+     wrapping. Letting it wrap keeps it centered and fully
+     visible. */
+  .hero__support-title h2 {
+    white-space: normal;
+    font-size: 1.6rem;
+  }
+
   /* The overlay used to be absolutely positioned on top of the
      image, with the image's own (short, wide) aspect ratio
      deciding the section's height. On phones the stacked

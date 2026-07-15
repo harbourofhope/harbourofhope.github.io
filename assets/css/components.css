@@ -1591,62 +1591,67 @@
 
     }
 
+    /* Horizontal snap-scroller, matching the "Moments That
+       Matter" pattern — each step becomes a fixed-width card
+       so 5 steps fit a natural swipeable row instead of a
+       tall vertical stack. */
+
     .journey-steps {
 
-        flex-direction: column;
+        display: flex;
+
+        flex-direction: row;
 
         align-items: stretch;
 
-        gap: var(--space-7);
+        gap: var(--space-5);
 
-        width: 100%;
+        width: auto;
+
+        margin-inline: calc(var(--space-4) * -1);
+        padding: var(--space-2) var(--space-4) var(--space-4);
+
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
     }
 
     .journey-step {
 
+        flex: 0 0 auto;
+        width: 190px;
+
         display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        align-items: flex-start;
-
-        text-align: left;
-
-        gap: var(--space-4);
-
+        text-align: center;
+        gap: 0;
         padding: 0;
-
         position: relative;
+
+        scroll-snap-align: start;
 
     }
 
     .journey-step__visual {
 
-        height: auto;
-
-        flex-shrink: 0;
+        height: 70px;
 
     }
 
     .journey-step__title {
 
-        margin: 0 0 var(--space-2);
+        margin: var(--space-3) 0 var(--space-2);
 
     }
 
+    /* The dashed connector was drawn between rows in the old
+       vertical stack — it doesn't apply to a horizontally
+       scrolling row of cards, so it's switched off here. */
     .journey-step:not(:last-child)::after {
 
-        content: '';
-
-        position: absolute;
-
-        left: 27px;
-
-        top: 56px;
-
-        bottom: calc(var(--space-7) * -1);
-
-        border-left: 2px dashed var(--color-primary-light);
-
-        opacity: .55;
+        display: none;
 
     }
 
