@@ -1,0 +1,167 @@
+/* ==========================================================
+   Harbour of Hope Website
+   CSS Reset
+   ----------------------------------------------------------
+   Establishes a consistent foundation across browsers.
+   ========================================================== */
+
+
+/* ===========================
+   Box Sizing
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* ===========================
+   Reset Margins & Padding
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===========================
+   Smooth Scrolling
+   =========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ===========================
+   Body Defaults
+   =========================== */
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ===========================
+   Media Elements
+   =========================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ===========================
+   Form Elements
+   =========================== */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ===========================
+   Buttons
+   =========================== */
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+/* ===========================
+   Links
+   =========================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ===========================
+   Lists
+   =========================== */
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+/* ===========================
+   Tables
+   =========================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* ===========================
+   Text Overflow
+   =========================== */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+/* ===========================
+   Accessibility
+   =========================== */
+
+:focus-visible {
+  outline: 3px solid #2B7FFF;
+  outline-offset: 3px;
+}
+
+
+/* ===========================
+   Reduced Motion Support
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
