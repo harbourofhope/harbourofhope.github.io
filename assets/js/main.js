@@ -9,6 +9,32 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Global initialization
+
+  // Mobile nav toggle — opens/closes the .site-nav__menu dropdown
+  // (styles for the open/closed states live in responsive.css).
+  var navToggle = document.querySelector(".site-nav__toggle");
+  var navMenu = document.querySelector(".site-nav__menu");
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      var isOpen = navMenu.classList.toggle("site-nav__menu--open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      navToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    // Close the menu after picking a link, so it doesn't stay
+    // open over the next page's content.
+    navMenu.querySelectorAll(".site-nav__link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("site-nav__menu--open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+  }
 });
 
 /**
