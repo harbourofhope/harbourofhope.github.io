@@ -1557,56 +1557,19 @@
 
 @media (max-width: 767px) {
 
+    /* The whole timeline — start scene, all 5 steps, and the
+       end scene — becomes one continuous horizontal
+       snap-scroller, so it's a single swipeable strip from
+       "Where it feels heavy" to "Safe harbour ahead" rather
+       than splitting into stacked sections with only the
+       middle part scrolling. */
+
     .journey-timeline {
 
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 0;
-
-    }
-
-    .journey-connector {
-
-        display: none;
-
-    }
-
-    .journey-scene {
-
-        flex-basis: auto;
-
-        margin-top: 0;
-
-        margin-bottom: var(--space-6);
-
-    }
-
-    .journey-scene--end {
-
-        margin-top: var(--space-6);
-
-        margin-bottom: 0;
-
-    }
-
-    /* Horizontal snap-scroller, matching the "Moments That
-       Matter" pattern — each step becomes a fixed-width card
-       so 5 steps fit a natural swipeable row instead of a
-       tall vertical stack. */
-
-    .journey-steps {
-
         display: flex;
-
         flex-direction: row;
-
         align-items: stretch;
-
         gap: var(--space-5);
-
-        width: auto;
 
         margin-inline: calc(var(--space-4) * -1);
         padding: var(--space-2) var(--space-4) var(--space-4);
@@ -1616,21 +1579,42 @@
         -webkit-overflow-scrolling: touch;
     }
 
+    .journey-connector {
+
+        display: none;
+
+    }
+
+    /* Removes the <ol>'s own box so its <li> steps become
+       direct flex items of .journey-timeline — sitting in the
+       very same row as the start/end scenes instead of inside
+       a separate, nested scroll area. */
+    .journey-steps {
+
+        display: contents;
+
+    }
+
+    .journey-scene,
     .journey-step {
 
         flex: 0 0 auto;
         width: 190px;
+        margin: 0;
+        text-align: center;
+
+        scroll-snap-align: start;
+
+    }
+
+    .journey-step {
 
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        text-align: center;
-        gap: 0;
         padding: 0;
         position: relative;
-
-        scroll-snap-align: start;
 
     }
 
