@@ -15,6 +15,77 @@
       padding-right: 1rem;
   }
 
+  /* The overlay used to be absolutely positioned on top of the
+     image, with the image's own (short, wide) aspect ratio
+     deciding the section's height. On phones the stacked
+     eyebrow/title/description/buttons/welcome-note need far
+     more vertical room than that image ever provides, so
+     content below the top ~200px was being clipped by the
+     section's overflow:hidden. Flowing the text below the
+     image instead of over it fixes that, and is more legible
+     on a small screen anyway. */
+
+  .hero {
+    overflow: visible;
+  }
+
+  .hero__overlay {
+    position: relative;
+    inset: auto;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-6);
+    background: var(--color-white);
+  }
+
+  .hero__text {
+    margin-top: 0;
+    text-shadow: none;
+    transform: none;
+  }
+
+  .hero__welcome {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+    margin-top: var(--space-5);
+  }
+
+  /* Nav — the hamburger toggle now shows/hides this as a
+     dropdown panel (see main.js for the open/close logic). */
+
+  .site-nav {
+    position: relative;
+  }
+
+  .site-nav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-top: 0;
+    padding: var(--space-4) 1rem;
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-header);
+  }
+
+  .site-nav__menu--open {
+    display: flex;
+  }
+
+  /* Support cards / services — force single column so text
+     isn't squeezed to one word per line. */
+
+  .support-grid,
+  .support-services {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .hero__text {
