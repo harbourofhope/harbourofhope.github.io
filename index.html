@@ -62,6 +62,114 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
 
+<!-- ==========================================
+     Schema.org Structured Data
+     Harbour of Hope
+     Production Version 2.0
+========================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebSite",
+      "@id": "https://harbourofhope.github.io/#website",
+      "url": "https://harbourofhope.github.io/",
+      "name": "Harbour of Hope",
+      "alternateName": "Harbour of Hope Online Counselling",
+      "description": "Professional online counselling providing compassionate emotional support for individuals, couples and families.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://harbourofhope.github.io/#organization"
+      }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://harbourofhope.github.io/#homepage",
+      "url": "https://harbourofhope.github.io/",
+      "name": "Harbour of Hope",
+      "isPartOf": {
+        "@id": "https://harbourofhope.github.io/#website"
+      },
+      "about": {
+        "@id": "https://harbourofhope.github.io/#service"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://harbourofhope.github.io/assets/images/logo/social-preview.jpg"
+      },
+      "description": "Professional online counselling providing compassionate emotional support for individuals, couples and families.",
+      "inLanguage": "en-IN"
+    },
+
+    {
+      "@type": "Organization",
+      "@id": "https://harbourofhope.github.io/#organization",
+      "name": "Harbour of Hope",
+      "url": "https://harbourofhope.github.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://harbourofhope.github.io/assets/images/logo/logo.png"
+      },
+      "image": "https://harbourofhope.github.io/assets/images/logo/social-preview.jpg",
+      "description": "Harbour of Hope provides professional online counselling in a safe, confidential and compassionate environment.",
+
+      "founder": {
+        "@type": "Person",
+        "name": "Esther Khatri"
+      },
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    },
+
+    {
+      "@type": "CounselingService",
+      "@id": "https://harbourofhope.github.io/#service",
+      "name": "Harbour of Hope",
+      "url": "https://harbourofhope.github.io/",
+      "provider": {
+        "@id": "https://harbourofhope.github.io/#organization"
+      },
+
+      "description": "Professional online counselling offering compassionate support for emotional wellbeing, relationships, family life, grief, life transitions and workplace wellbeing.",
+
+      "serviceType": [
+        "Online Counselling",
+        "Individual Counselling",
+        "Relationship Counselling",
+        "Family Counselling",
+        "Grief Counselling",
+        "Life Transition Counselling",
+        "Workplace Wellbeing"
+      ],
+
+      "employee": {
+        "@type": "Person",
+        "name": "Esther Khatri",
+        "jobTitle": "Lead Counsellor"
+      },
+
+      "availableLanguage": [
+        "en",
+        "hi"
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+
+  ]
+}
+</script>
+
 </head>
 
 <body>
